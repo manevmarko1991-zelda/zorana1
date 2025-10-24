@@ -1,5 +1,7 @@
-number1=int(input("Enter your number:"))
-number2=int(input("Enter your 2 number:"))
+from dataclasses import replace
+
+number1=float(input("Enter your number:").replace(',','.'))# to make , not crush the system
+number2=float(input("Enter your number:").replace(',','.'))#floating is  number with decimals
 
 
 if number2 < number1:
