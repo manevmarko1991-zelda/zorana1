@@ -12,4 +12,4 @@ for i in range(1, a + 1):
 
     fakultaet *= i
 
-    print(f"Die Fakultät von {a} ist {fakultaet}")
+print(f"Die Fakultät von {a} ist {fakultaet}")
