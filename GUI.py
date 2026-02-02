@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import messagebox
 
+ #Updated upstream
 #Hauptfenster
 root = tk.Tk()
 #Erzeugt ein Fenster mit dem Namen root
@@ -15,10 +16,25 @@ root.title("Meine erste App")   #Titel/Name des Fensters festlegen
 
 
 #Funktion zum Zählen
+
+#main fenster
+root = tk.Tk()
+# erzeugt ein fenster mit dem namen root
+# = tk = aufruf der biblothek tkinter
+#.tk 0 auf das hauptfenser (so heisst die kalsse)
+
+root.geometry('2560x1440')
+root.config(bg='black')  #farbe des hintergrunds bg=background
+root.title("Meine erste app")
+#root.resizable (false,false)
+
+#funktion zum zählen
+
 count=0
 def click():
     global count
     count += 1
+
     label.config(text=f"Klicks: {count}")
 
 def ende():
@@ -64,3 +80,39 @@ beenden.place(relx=0.1, rely=0.9, anchor=tk.CENTER)
 
 
 root.mainloop()
+
+label.config(text=f"klicks: {count}")
+def ende():
+   if messagebox.askyesno(title="quit", message="wirklich beenden?"):
+    root.destroy()
+#widgets
+label = tk.Label(root, text="Klicks:0",bg="white")
+#label = name / bezihner
+#tk.label = klasse aus tkinter - schriftzug ( preisschild /etikettiergerät)
+#text = was soll auf unsere schriftung stehen!
+#bg=background farbe#
+#fg forgrund farbe
+#font ("arial",16) = schrifart und schriftgrosse  festlegen
+
+#platziren des labesl 3 moglichkeit
+#pack =automatisch
+#place == pixelgenau platziren
+#grid=raster (zeiler/spalten-anlehnung  an excel)
+#label.place(x=100 , y=100)
+#label.pack(paddy=200)
+label.place(relx=0.5 , rely=0.2, anchor=tk.CENTER )
+
+#button
+button = tk.Button(root, text ="klick mich!",bg="white" ,fg="black",command=click)
+#button = name /bezihner
+#tk.button = klasse aus tkinter
+#root 0 elternobjekt (verweiss wo der button erscheinen soll )
+button.place(relx=0.5 , rely=0.5, anchor=tk.CENTER)
+
+#knopf zum beenden
+beenden=tk.Button(root,text="   quit   ",fg="red", command=ende)
+beenden.place(relx=0.5 , rely=0.8, anchor=tk.CENTER,)
+
+
+root.mainloop()
+
